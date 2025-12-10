@@ -9,6 +9,7 @@ source ~/.bash_profile
 
 echo '---------------- create_git_repository ----------------'
 START_TIME="$(date +%s.%N)"
+
 file_absolute_path="$(readlink -f "$0")"
 project_root_directory="$(dirname "$file_absolute_path")"
 repository_name="$1"
