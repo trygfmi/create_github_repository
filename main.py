@@ -24,29 +24,33 @@ print(title)
 
 for_login(driver)
 
+# newボタンを押す
 search_new_button_string = '//a[@class="text-center btn btn-primary ml-2"]'
 element_number = 1
 press_something_block_xpath(driver, search_new_button_string, element_number)
 
+# リポジトリ名を入力
 time.sleep(set_sleep_time)
 search_input_repository_name_string = '//input[@id="repository-name-input"]'
-repository_name_element = get_element(driver, search_input_repository_name_string)
+repository_name_element = get_element_until(driver, search_input_repository_name_string)
 repository_name_element.send_keys(repository_name)
 time.sleep(set_send_keys_sleep_time)
 
-search_create_button_string = '//button[@class="prc-Button-ButtonBase-c50BI mt-4"]'
-element_number = 1
-press_something_block_xpath(driver, search_create_button_string, element_number)
+# create repositoryボタンを押す
+search_create_button_string = '//*[text()="Create repository"]'
+press_element_parent(driver, search_create_button_string, "../..")
 time.sleep(set_sleep_time)
 
 # リポジトリのトップページでメニューボタンを押す
-search_menu_button_string = '//button[@class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item"]'
-menu_button_element = get_element(driver, search_menu_button_string)
-menu_button_element.click()
-time.sleep(set_send_keys_sleep_time)
+# search_menu_button_string = '//button[@class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item"]'
+# menu_button_element = get_element_until(driver, search_menu_button_string)
+# menu_button_element.click()
+# time.sleep(set_send_keys_sleep_time)
 
 # ボタンを押した後に開くドロップダウンからSettingsをクリック
-search_settings_string = '//a[@class="ActionListContent ActionListContent--visual16"]'
+# search_settings_string = '//a[@class="ActionListContent ActionListContent--visual16"]'
+# search_settings_string = '//a[@href="/trygfmi/type_all-command-type/settings"]'
+search_settings_string = '//li[@class="prc-UnderlineNav-UnderlineNavItem-syRjR"][9]/a'
 element_number = 1
 press_something_block_xpath(driver, search_settings_string, element_number)
 time.sleep(set_sleep_time)
@@ -58,22 +62,20 @@ press_something_block_xpath(driver, search_rulesets_section_string, element_numb
 time.sleep(set_sleep_time)
 
 # New rulesetsボタンをクリック
-search_new_ruleset_button_string = '//button[@class="prc-Button-ButtonBase-c50BI"]'
-new_rule_sets_button_element = get_element(driver, search_new_ruleset_button_string)
-new_rule_sets_button_element.click()
+search_new_ruleset_button_string = '//*[text()="New ruleset"]'
+press_element_parent(driver, search_new_ruleset_button_string, "../..")
 time.sleep(set_send_keys_sleep_time)
 
 # New branch rulesetsセクションをクリック
-search_new_branch_ruleset_string = '//a[@class="prc-ActionList-ActionListContent-sg9-x prc-Link-Link-85e08"]'
-element_number = 5
-press_something_block_xpath(driver, search_new_branch_ruleset_string, element_number)
+search_new_branch_ruleset_string = '//*[text()="New branch ruleset"]'
+press_element_parent(driver, search_new_branch_ruleset_string, "../..")
 time.sleep(set_sleep_time)
 
 # Rulesetsの名前を入力
 rule_sets_name = "block force pushes"
 search_rule_sets_name_string = '//input[@data-component="input"]'
 element_number = 1
-rule_sets_name_element = get_element(driver, search_rule_sets_name_string)
+rule_sets_name_element = get_element_until(driver, search_rule_sets_name_string)
 rule_sets_name_element.send_keys(rule_sets_name)
 time.sleep(set_send_keys_sleep_time)
 
@@ -83,24 +85,20 @@ element_number = 1
 press_something_block_xpath(driver, search_enforcement_status_string, element_number)
 
 # Enforcement statusのactiveをクリック
-search_enforcement_active_string = '//div[@class="prc-ActionList-ActionListContent-sg9-x"]'
-element_number = 2
-press_something_block_xpath(driver, search_enforcement_active_string, element_number)
+search_enforcement_active_string = '//*[text()="Active"]'
+press_element_parent(driver, search_enforcement_active_string, "../..")
 
 # Add targetボタンをクリック
-search_add_target_string = '//button[@class="prc-Button-ButtonBase-c50BI"]'
-element_number = 2
-press_something_block_xpath(driver, search_add_target_string, element_number)
+search_add_target_string = '//*[text()="Add target"]'
+press_element_parent(driver, search_add_target_string, "../..")
 
 # Include all branchesセクションをクリック
-search_include_all_branches_string = '//div[@class="prc-ActionList-ActionListContent-sg9-x"]'
-element_number = 3
-press_something_block_xpath(driver, search_include_all_branches_string, element_number)
+search_include_all_branches_string = '//*[text()="Include all branches"]'
+press_element_parent(driver, search_include_all_branches_string, "../..")
 
 # Createボタンをクリック
-search_create_button_string = '//button[@class="prc-Button-ButtonBase-c50BI"]'
-element_number = 1
-press_something_block_xpath(driver, search_create_button_string, element_number)
+search_create_button_string = '//*[text()="Create"]'
+press_element_parent(driver, search_create_button_string, "../..")
 input("認証する必要があれば認証してください")
 
 
