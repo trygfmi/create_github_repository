@@ -17,7 +17,7 @@ repository_name="$1"
 python "$project_root_directory""/main.py" "$repository_name"
 result="$(python "$project_root_directory""/get_url.py" "$repository_name")"
 echo "$result"
-"$project_root_directory""/""init_and_set_git_config.sh" "$result"
+"$project_root_directory""/""set_remote_git.sh" "$result"
 
 END_TIME="$(date +%s.%N)"
 ELAPSED_TIME="$(echo "$END_TIME - $START_TIME" | bc)"
