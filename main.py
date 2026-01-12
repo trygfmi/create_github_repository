@@ -41,15 +41,7 @@ search_create_button_string = '//*[text()="Create repository"]'
 press_element_parent(driver, search_create_button_string, "../..")
 time.sleep(set_sleep_time)
 
-# リポジトリのトップページでメニューボタンを押す
-# search_menu_button_string = '//button[@class="Button Button--iconOnly Button--secondary Button--medium UnderlineNav-item"]'
-# menu_button_element = get_element_until(driver, search_menu_button_string)
-# menu_button_element.click()
-# time.sleep(set_send_keys_sleep_time)
-
-# ボタンを押した後に開くドロップダウンからSettingsをクリック
-# search_settings_string = '//a[@class="ActionListContent ActionListContent--visual16"]'
-# search_settings_string = '//a[@href="/trygfmi/type_all-command-type/settings"]'
+# Settingsをクリック
 search_settings_string = '//li[@class="prc-UnderlineNav-UnderlineNavItem-syRjR"][9]/a'
 element_number = 1
 press_something_block_xpath(driver, search_settings_string, element_number)
