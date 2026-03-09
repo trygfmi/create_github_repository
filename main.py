@@ -22,7 +22,7 @@ driver.get(access_url)
 title = driver.title
 print(title)
 
-for_login(driver)
+for_login_getpass(driver)
 
 # newボタンを押す
 search_new_button_string = '//a[@class="text-center btn btn-primary ml-2"]'
